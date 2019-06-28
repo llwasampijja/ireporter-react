@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`tests for the button component button renders properly 1`] = `
+<Button
+  buttonClass=""
+  buttonEvent={[Function]}
+  buttonId=""
+  buttonName="button"
+/>
+`;

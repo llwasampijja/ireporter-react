@@ -18,6 +18,18 @@ module.exports = {
           },
         ],
       },
+      {
+        test: /\.(scss|css)$/,
+        use: [
+          'style-loader', // creates style nodes from JS strings
+          'css-loader', // translates CSS into CommonJS
+          'sass-loader', // compiles Sass to CSS, using Node Sass by default
+        ],
+      },
+      {
+        test: /\.(jpg|gif|png)(\?[a-z0-9=.]+)?$/,
+        loader: 'url-loader?limit=100000',
+      },
     ],
   },
   plugins: [
