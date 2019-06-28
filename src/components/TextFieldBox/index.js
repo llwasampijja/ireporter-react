@@ -15,7 +15,7 @@ const TextFieldBox = (props) => {
 
   return (
     <Fragment>
-      <input
+      <textarea
         id={textFieldId}
         name={textFieldName}
         value={textFieldValue}
