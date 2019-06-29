@@ -1,0 +1,59 @@
+
+/* header */
+header {
+  /* background-color: rgb(65, 105, 225); */
+  background-color: rgb(65, 105, 225);
+  padding: 15px;
+  color: #FFFFFF;
+}
+
+header.navigation {
+  border-bottom: #E8E8E8 solid 1px;
+}
+
+header h1 {
+  display: inline-block;
+  margin: auto 0px;
+}
+
+header h1 a:link, header h1 a:visited{
+  color: #FFFFFF;
+}
+
+header h1 a:hover{
+  color: rgb(65, 105, 225);
+}
+
+header nav ul li {
+  display: inline-block;
+  font-weight: bold;
+}
+
+header nav ul li a {
+  padding: 10px 10px 10px 10px;
+}
+
+header nav ul li a:link{
+  color: #FFFFFF;
+}
+
+header nav ul li a:hover{
+  color: rgb(65, 105, 225);
+}
+
+/* dashboard styles */
+.bigscreen-menu-nav {
+  display: inline-block;
+  float: right;
+}
+
+.bigscreen-menu-nav ul {
+  height: 50px;
+}
+.header-nav-item {
+  margin: auto;
+}
+
+.header-nav-item a:visited{
+  color: rgb(250, 246, 246);
+}

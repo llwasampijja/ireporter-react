@@ -4,10 +4,6 @@ import { Provider } from 'react-redux';
 import App from './components/App';
 import store from './store';
 
-// const App = () => {
-//   return <div>I reporter</div>;
-// };
-
 ReactDOM.render(
   <Provider store={store}>
     <App />

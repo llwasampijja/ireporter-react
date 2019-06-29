@@ -1,11 +1,24 @@
+// react libraries
 import React, { Component } from 'react';
+
 // third-party libraries
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+
+// components
 import InputFieldBox from '../InputFieldBox';
 import Button from '../Button';
-import { SIGN_UP_STRING } from '../../utilities/myConstants';
+import LoaderProgress from '../LoaderProgress';
+import Navbar from '../Navbar';
+
+// actions
 import signupUserActions from '../../store/actions/signupUserActions';
+
+// styles
+import './SignupForm.scss';
+
+// utilities
+import { SIGN_UP_STRING } from '../../utilities/myConstants';
 
 class SignupForm extends Component {
   constructor(props) {
@@ -57,14 +70,10 @@ class SignupForm extends Component {
 
   render() {
     const {
-      emailError,
-      usernameError,
-      passwordError,
-      confirmPasswordError,
-      signupMessageState,
-      isSigningUp,
+      signupStateMessage,
+      signupErrorMessage,
+      isLoading,
     } = this.props;
-
     const {
       firstname,
       lastname,
@@ -78,159 +87,137 @@ class SignupForm extends Component {
 
     return (
       <div>
-        <form className="signupForm" id="signupForm">
-          <InputFieldBox
-            inputFieldName="firstname"
-            inputFieldValue={firstname}
-            inputFieldId="signup-firstname"
-            inputFieldType="text"
-            inputFieldClass="signupForm__input"
-            inputFieldOnchange={this.onChangeHandler}
-            inputFieldPlaceholder="firstname"
-          >
-            <br />
-            <span id="signupForm__input__error__username" className="signupForm__input__error">
-              <small>{usernameError}</small>
-            </span>
-          </InputFieldBox>
-          <InputFieldBox
-            inputFieldName="lastname"
-            inputFieldValue={lastname}
-            inputFieldId="signup-lastname"
-            inputFieldType="text"
-            inputFieldClass="signupForm__input"
-            inputFieldOnchange={this.onChangeHandler}
-            inputFieldPlaceholder="lastname"
-          >
-            <br />
-            <span id="signupForm__input__error__username" className="signupForm__input__error">
-              <small>{usernameError}</small>
-            </span>
-          </InputFieldBox>
-          <InputFieldBox
-            inputFieldName="othernames"
-            inputFieldValue={othernames}
-            inputFieldId="signup-othernames"
-            inputFieldType="text"
-            inputFieldClass="signupForm__input"
-            inputFieldOnchange={this.onChangeHandler}
-            inputFieldPlaceholder="othernames"
-          >
-            <br />
-            <span id="signupForm__input__error__username" className="signupForm__input__error">
-              <small>{usernameError}</small>
-            </span>
-          </InputFieldBox>
-          <InputFieldBox
-            inputFieldName="email"
-            inputFieldValue={email}
-            inputFieldId="signup-email"
-            inputFieldType="email"
-            inputFieldClass="signupForm__input"
-            inputFieldOnchange={this.onChangeHandler}
-            inputFieldPlaceholder="email"
-          >
-            <br />
-            <span id="signupForm__input__error__email" className="signupForm__input__error">
-              <small>{emailError}</small>
-            </span>
-          </InputFieldBox>
-          <InputFieldBox
-            inputFieldName="phonenumber"
-            inputFieldValue={phonenumber}
-            inputFieldId="signup-phonenumber"
-            inputFieldType="tel"
-            inputFieldClass="signupForm__input"
-            inputFieldOnchange={this.onChangeHandler}
-            inputFieldPlaceholder="0795961853"
-          >
-            <br />
-            <span id="signupForm__input__error__username" className="signupForm__input__error">
-              <small>{usernameError}</small>
-            </span>
-          </InputFieldBox>
-          <InputFieldBox
-            inputFieldName="username"
-            inputFieldValue={username}
-            inputFieldId="signup-username"
-            inputFieldType="text"
-            inputFieldClass="signupForm__input"
-            inputFieldOnchange={this.onChangeHandler}
-            inputFieldPlaceholder="username"
-          >
-            <br />
-            <span id="signupForm__input__error__username" className="signupForm__input__error">
-              <small>{usernameError}</small>
-            </span>
-          </InputFieldBox>
-          <InputFieldBox
-            inputFieldName="password"
-            inputFieldValue={password}
-            inputFieldId="signup-password"
-            inputFieldType="password"
-            inputFieldClass="signupForm__input"
-            inputFieldOnchange={this.onChangeHandler}
-            inputFieldPlaceholder="password"
-          >
-            <br />
-            <span id="signupForm__input__error__password" className="signupForm__input__error">
-              <small>{passwordError}</small>
-            </span>
-          </InputFieldBox>
-          <InputFieldBox
-            inputFieldName="confirmPassword"
-            inputFieldValue={confirmPassword}
-            inputFieldId="signup-confirmPassword"
-            inputFieldType="password"
-            inputFieldClass="signupForm__input"
-            inputFieldOnchange={this.onChangeHandler}
-            inputFieldPlaceholder="confirm password"
-          >
-            <br />
-            <span id="signupForm__input__error__confirmPassword" className="signupForm__input__error">
-              <small>{confirmPasswordError}</small>
-            </span>
-          </InputFieldBox>
-          <br />
-          <span className="signupForm__signUpMessage">{signupMessageState}</span>
-          {isSigningUp && <div className="signupForm__loader" />}
-          <Button
-            buttonId="signupForm__button"
-            buttonClass="signupForm__button"
-            buttonName={SIGN_UP_STRING}
-            buttonEvent={this.onSubmitHandler}
-          />
-        </form>
+        <Navbar redflagsLink="Home" userName="Sign in" />
+        <section className="sign-form-container">
+          <div className="sign-form-container-elements-wrapper">
+            <div className="sign-form-image-wrapper">
+              <form className="sign-form" id="signupForm">
+                <div className="sign-form-element sign-form-input-wrapper">
+                  <InputFieldBox
+                    inputFieldName="firstname"
+                    inputFieldValue={firstname}
+                    inputFieldId="signup-firstname"
+                    inputFieldType="text"
+                    inputFieldClass="sign-form-input"
+                    inputFieldOnchange={this.onChangeHandler}
+                    inputFieldPlaceholder="firstname"
+                  />
+                </div>
+                <div className="sign-form-element sign-form-input-wrapper">
+                  <InputFieldBox
+                    inputFieldName="lastname"
+                    inputFieldValue={lastname}
+                    inputFieldId="signup-lastname"
+                    inputFieldType="text"
+                    inputFieldClass="sign-form-input"
+                    inputFieldOnchange={this.onChangeHandler}
+                    inputFieldPlaceholder="lastname"
+                  />
+                </div>
+                <div className="sign-form-element sign-form-input-wrapper">
+                  <InputFieldBox
+                    inputFieldName="othernames"
+                    inputFieldValue={othernames}
+                    inputFieldId="signup-othernames"
+                    inputFieldType="text"
+                    inputFieldClass="sign-form-input"
+                    inputFieldOnchange={this.onChangeHandler}
+                    inputFieldPlaceholder="othernames"
+                  />
+                </div>
+                <div className="sign-form-element sign-form-input-wrapper">
+                  <InputFieldBox
+                    inputFieldName="email"
+                    inputFieldValue={email}
+                    inputFieldId="signup-email"
+                    inputFieldType="email"
+                    inputFieldClass="sign-form-input"
+                    inputFieldOnchange={this.onChangeHandler}
+                    inputFieldPlaceholder="email"
+                  />
+                </div>
+                <div className="sign-form-element sign-form-input-wrapper">
+                  <InputFieldBox
+                    inputFieldName="phonenumber"
+                    inputFieldValue={phonenumber}
+                    inputFieldId="signup-phonenumber"
+                    inputFieldType="tel"
+                    inputFieldClass="sign-form-input"
+                    inputFieldOnchange={this.onChangeHandler}
+                    inputFieldPlaceholder="0795961853"
+                  />
+                </div>
+                <div className="sign-form-element sign-form-input-wrapper">
+                  <InputFieldBox
+                    inputFieldName="username"
+                    inputFieldValue={username}
+                    inputFieldId="signup-username"
+                    inputFieldType="text"
+                    inputFieldClass="sign-form-input"
+                    inputFieldOnchange={this.onChangeHandler}
+                    inputFieldPlaceholder="username"
+                  />
+                </div>
+                <div className="sign-form-element sign-form-input-wrapper">
+                  <InputFieldBox
+                    inputFieldName="password"
+                    inputFieldValue={password}
+                    inputFieldId="signup-password"
+                    inputFieldType="password"
+                    inputFieldClass="sign-form-input"
+                    inputFieldOnchange={this.onChangeHandler}
+                    inputFieldPlaceholder="password"
+                  />
+                </div>
+                <div className="sign-form-element sign-form-input-wrapper">
+                  <InputFieldBox
+                    inputFieldName="confirmPassword"
+                    inputFieldValue={confirmPassword}
+                    inputFieldId="signup-confirmPassword"
+                    inputFieldType="password"
+                    inputFieldClass="sign-form-input"
+                    inputFieldOnchange={this.onChangeHandler}
+                    inputFieldPlaceholder="confirm password"
+                  />
+                </div>
+                <br />
+                <span className="signupForm__signUpError">{signupErrorMessage}</span>
+                <span className="signupForm__signUpMessage">{signupStateMessage}</span>
+                {isLoading && <LoaderProgress />}
+                <Button
+                  buttonId="signupForm__button"
+                  buttonClass="sign-form-input-btn"
+                  buttonName={SIGN_UP_STRING}
+                  buttonEvent={this.onSubmitHandler}
+                />
+              </form>
+            </div>
+          </div>
+        </section>
       </div>
     );
   }
 }
 
 SignupForm.propTypes = {
-  emailError: PropTypes.string,
-  usernameError: PropTypes.string,
-  passwordError: PropTypes.string,
-  confirmPasswordError: PropTypes.string,
-  signupMessageState: PropTypes.string,
-  isSigningUp: PropTypes.bool,
+  signupStateMessage: PropTypes.string,
+  signupErrorMessage: PropTypes.string,
+  isLoading: PropTypes.bool,
   signupUser: PropTypes.func.isRequired,
 };
 
 SignupForm.defaultProps = {
-  emailError: '',
-  usernameError: '',
-  passwordError: '',
-  confirmPasswordError: '',
-  signupMessageState: '',
-  isSigningUp: false,
+  signupStateMessage: '',
+  signupErrorMessage: '',
+  isLoading: false,
 };
 
 const mapStateToProps = (state) => {
   const {
-    signupSuccess, signupError, isSigningUp,
+    signupStateMessage, signupErrorMessage, isLoading,
   } = state.signupUserReducer;
   return {
-    signupSuccess, signupError, isSigningUp,
+    signupStateMessage, signupErrorMessage, isLoading,
   };
 };
 

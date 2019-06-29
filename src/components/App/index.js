@@ -1,12 +1,23 @@
-import React from 'react';
-// import SignupForm from '../SignupForm';
-import GetRedflags from '../Redflags';
-// import CreateRedflag from '../Redflags/CreateRedflag';
+import React, { Component } from 'react';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import SecureRoute from '../../routers';
+import SignupForm from '../SignupForm';
+import GetAllRedflags from '../Redflags/GetRedflags';
+import CreateARedflag from '../Redflags/CreateRedflag';
+import './App.scss';
 
-const App = () => (
-  <div>
-    <GetRedflags />
-  </div>
-);
+class App extends Component {
+  render() {
+    return (
+      <BrowserRouter>
+        <Switch>
+          <SecureRoute path="/incidents" component={CreateARedflag} />
+          <SecureRoute exact path="/" component={GetAllRedflags} />
+          <Route path="/sign-up" render={props => <SignupForm {...props} />} />
+        </Switch>
+      </BrowserRouter>
+    );
+  }
+}
 
 export default App;

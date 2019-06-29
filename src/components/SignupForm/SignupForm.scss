@@ -1,0 +1,142 @@
+.sign-form-container{
+  width: 100%;
+  margin: 0 auto;
+}
+
+.sign-form-container-elements-wrapper {
+  width: 100%;  
+  min-height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+
+.sign-form-image-wrapper{
+  width: 400px;
+  background: #FFFFFF;
+  align-items: stretch;
+  overflow: hidden;
+  margin: 50px auto;
+  box-shadow: 1px 2px 4px rgba(0, 0, 0, .5);
+}
+
+/* sign form image */
+.sign-form-image {
+  width: 50%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+  background-image: url('../../assets/images/intervention.png');
+  z-index: 1;
+}
+
+/* the sign form */
+.sign-form{
+    width: 85%;
+    // display: flex;
+    // flex-wrap: wrap;
+    margin: 20px auto;
+}
+
+  
+.sign-form-title {
+  width: 100%;
+  font-weight: bold;
+  font-size: 20px;
+  color: #555555;
+  line-height: 1.2;
+  letter-spacing: 2px;
+  text-align: center;
+  display: block;
+}
+
+
+// .sign-form-input-wrapper {
+// border: 1px solid #e0c1c1;
+// }
+
+.sign-form-element {
+width: 100%;
+position: relative;
+color: rgb(65, 105, 225);
+font-style: italic;
+}
+
+.sign-form-input {
+  display: block;
+  width: 100%;
+  background: #FFFFFF;
+  font-size: 18px;
+  color: #666666;
+  line-height: 1.2;
+  border-top-style: none;
+  border-right-style: none;
+  border-bottom-style: solid;
+  border-left-style: none;
+  border-width: 1px;
+}
+
+.sign-form-input:focus{
+  outline: none;
+}
+
+input.sign-form-input {
+height: 35px;
+}
+
+.sign-form-input-btn-wrapper {
+width: 100%;
+// display: flex;
+// flex-wrap: wrap;
+justify-content: center;
+}
+
+/* sign form buttons */
+.sign-form-input-btn {
+  width: 100%;
+  height: 35px;
+  // display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0px 20px;
+  border-radius: 3px;
+  background: rgb(65, 105, 225);
+  font-size: 12px;
+  font-weight: bold;
+  color: #fff;
+  line-height: 1.2;
+  transition: all 0.4s;
+}
+
+.sign-form-input-btn:hover {
+background: #FFFFFF;
+color: black;
+}
+
+
+
+.signupForm__signUpError {
+  width: 100%;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 1.2;
+  letter-spacing: 2px;
+  text-align: center;
+  color: #CE2029;
+  display: block;
+  font-style: italic;
+  margin: 10px;
+}
+
+.signupForm__signUpMessage {
+  width: 100%;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 1.2;
+  letter-spacing: 2px;
+  text-align: center;
+  color: #00FF00;
+  display: block;
+  font-style: italic;
+  margin: 10px;
+}

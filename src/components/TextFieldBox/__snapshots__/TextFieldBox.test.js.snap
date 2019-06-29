@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`tests the TextFieldBox component should match snapshop 1`] = `
+<Fragment>
+  <textarea
+    className=""
+    id=""
+    name=""
+    onChange={[Function]}
+    placeholder=""
+    type=""
+    value=""
+  />
+</Fragment>
+`;

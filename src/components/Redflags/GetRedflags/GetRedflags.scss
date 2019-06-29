@@ -16,6 +16,14 @@ li {
   margin: 10px;
   display: inline-block;
   border-radius: 20px;
+  color: #2F4F4F;
+  font-weight: bold;
+}
+
+.grid-box-container ul li span {
+  color: #696969;
+  font-style: italic;
+  font-weight: lighter;
 }
 
 .grid-item-thumbnail-wrapper {
@@ -52,4 +60,15 @@ li {
 
 .view-report-btn {
   padding: 10px 40px;
+}
+
+.section-manage-content {
+  display: inline-block;
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-top: none;
+}
+
+.section-hold-content {
+  text-align: center;
 }

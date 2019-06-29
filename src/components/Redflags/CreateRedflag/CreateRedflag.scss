@@ -1,0 +1,68 @@
+.content-container {
+  text-align: center;
+}
+
+.incidentForm {
+  display: block;
+  text-align: center;
+  width: 85%;
+  margin: 15px auto;
+  background: #FFFFFF;
+  padding: 20px;
+  box-shadow: 1px 2px 4px rgba(0, 0, 0, .5);
+}
+
+.incidentForm__input {
+  display: block;
+  margin: 10px auto;
+  padding:10px 0px;
+  width: 100%;
+  border-top-style: none;
+  border-right-style: none;
+  border-bottom-style: solid;
+  border-left-style: none;
+  border-width: 1px;
+}
+
+.incidentForm__input:focus{
+  outline: none;
+}
+
+/* edit-report-btn */
+.signupForm__button {
+  appearance: none;
+  background-color: rgb(65, 105, 225);
+  border-radius: 30px;
+  border: 0;
+  color: #ffffff;
+  display: inline-block;
+  font-weight: bold;
+  padding: 1% 3%;
+  text-align: center;
+}
+
+.incidentForm__error {
+  width: 100%;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 1.2;
+  letter-spacing: 2px;
+  text-align: center;
+  color: #CE2029;
+  display: block;
+  font-style: italic;
+  margin: 10px;
+}
+
+.incidentForm__Message {
+  width: 100%;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 1.2;
+  letter-spacing: 2px;
+  text-align: center;
+  color: #00FF00;
+  display: block;
+  font-style: italic;
+  margin: 10px;
+}

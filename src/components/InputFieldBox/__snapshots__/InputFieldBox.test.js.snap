@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`tests the inputfieldbox component should match snapshop 1`] = `
+<Fragment>
+  <input
+    className=""
+    id=""
+    name=""
+    onChange={[Function]}
+    placeholder=""
+    type=""
+    value=""
+  />
+</Fragment>
+`;

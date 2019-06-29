@@ -1,0 +1,286 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`tests for the CreateRedflag component CreateRedflag renders properly 1`] = `
+<div>
+  <Navbar
+    adminPanel="/"
+    redflagsLink="Redflags"
+    userName=""
+  />
+  <div
+    className="content-container"
+  >
+    <form
+      className="incidentForm"
+      id="incidentForm"
+    >
+      <InputFieldBox
+        inputFieldClass="incidentForm__input"
+        inputFieldId="redflag-title"
+        inputFieldName="title"
+        inputFieldOnchange={[Function]}
+        inputFieldPlaceholder="title"
+        inputFieldType="text"
+        inputFieldValue=""
+      />
+      <TextFieldBox
+        textFieldClass="incidentForm__input"
+        textFieldId="redflag-description"
+        textFieldName="description"
+        textFieldOnchange={[Function]}
+        textFieldPlaceholder="description"
+        textFieldType="text"
+        textFieldValue=""
+      />
+      <InputFieldBox
+        inputFieldClass="incidentForm__input"
+        inputFieldId="image-urls"
+        inputFieldName="imageUrls"
+        inputFieldOnchange={[Function]}
+        inputFieldPlaceholder="image-urls separated by commas"
+        inputFieldType="text"
+        inputFieldValue=""
+      />
+      <InputFieldBox
+        inputFieldClass="incidentForm__input"
+        inputFieldId="video-urls"
+        inputFieldName="videoUrls"
+        inputFieldOnchange={[Function]}
+        inputFieldPlaceholder="video-urls separated by commas"
+        inputFieldType="text"
+        inputFieldValue=""
+      />
+      <InputFieldBox
+        inputFieldClass="incidentForm__input"
+        inputFieldId="coordinates"
+        inputFieldName="coordinates"
+        inputFieldOnchange={[Function]}
+        inputFieldPlaceholder="coordinates e.g 0.38272, 31.73373"
+        inputFieldType="text"
+        inputFieldValue=""
+      />
+      <span
+        className="incidentForm__error"
+      />
+      <span
+        className="incidentForm__Message"
+      />
+      <Button
+        buttonClass="signupForm__button"
+        buttonEvent={[Function]}
+        buttonId="signupForm__button"
+        buttonName="Add incident"
+      />
+    </form>
+  </div>
+</div>
+`;
+
+exports[`tests for the CreateRedflag component submits redflad data on clicking the button 1`] = `
+CreateRedflag {
+  "context": Object {},
+  "onChangeHandler": [Function],
+  "onSubmitHandler": [Function],
+  "props": Object {
+    "coordinates": "9, 23",
+    "description": "description",
+    "error": "",
+    "imageUrls": "image.jpg",
+    "isLoading": false,
+    "postRedflags": [MockFunction] {
+      "calls": Array [
+        Array [
+          [Function],
+        ],
+        Array [
+          Object {
+            "coordinates": "",
+            "description": "",
+            "imageUrls": "",
+            "title": "",
+            "videoUrls": "",
+          },
+        ],
+      ],
+      "results": Array [
+        Object {
+          "type": "return",
+          "value": undefined,
+        },
+        Object {
+          "type": "return",
+          "value": undefined,
+        },
+      ],
+    },
+    "successMessage": "",
+    "title": "title",
+    "videoUrls": "video.vob",
+  },
+  "refs": Object {},
+  "setState": [Function],
+  "state": Object {
+    "coordinates": "",
+    "description": "",
+    "imageUrls": "",
+    "signup": undefined,
+    "title": "",
+    "videoUrls": "",
+  },
+  "updater": Updater {
+    "_callbacks": Array [],
+    "_renderer": ReactShallowRenderer {
+      "_context": Object {},
+      "_didScheduleRenderPhaseUpdate": false,
+      "_dispatcher": Object {
+        "readContext": [Function],
+        "useCallback": [Function],
+        "useContext": [Function],
+        "useDebugValue": [Function],
+        "useEffect": [Function],
+        "useImperativeHandle": [Function],
+        "useLayoutEffect": [Function],
+        "useMemo": [Function],
+        "useReducer": [Function],
+        "useRef": [Function],
+        "useState": [Function],
+      },
+      "_element": <CreateRedflag
+        coordinates="9, 23"
+        description="description"
+        error=""
+        imageUrls="image.jpg"
+        isLoading={false}
+        postRedflags={
+          [MockFunction] {
+            "calls": Array [
+              Array [
+                [Function],
+              ],
+              Array [
+                Object {
+                  "coordinates": "",
+                  "description": "",
+                  "imageUrls": "",
+                  "title": "",
+                  "videoUrls": "",
+                },
+              ],
+            ],
+            "results": Array [
+              Object {
+                "type": "return",
+                "value": undefined,
+              },
+              Object {
+                "type": "return",
+                "value": undefined,
+              },
+            ],
+          }
+        }
+        successMessage=""
+        title="title"
+        videoUrls="video.vob"
+      />,
+      "_firstWorkInProgressHook": null,
+      "_forcedUpdate": false,
+      "_instance": [Circular],
+      "_isReRender": false,
+      "_newState": null,
+      "_numberOfReRenders": 0,
+      "_renderPhaseUpdates": null,
+      "_rendered": <div>
+        <Navbar
+          adminPanel="/"
+          redflagsLink="Redflags"
+          userName=""
+        />
+        <div
+          className="content-container"
+        >
+          <form
+            className="incidentForm"
+            id="incidentForm"
+          >
+            <InputFieldBox
+              inputFieldClass="incidentForm__input"
+              inputFieldId="redflag-title"
+              inputFieldName="title"
+              inputFieldOnchange={[Function]}
+              inputFieldPlaceholder="title"
+              inputFieldType="text"
+              inputFieldValue=""
+            >
+              
+            </InputFieldBox>
+            <TextFieldBox
+              textFieldClass="incidentForm__input"
+              textFieldId="redflag-description"
+              textFieldName="description"
+              textFieldOnchange={[Function]}
+              textFieldPlaceholder="description"
+              textFieldType="text"
+              textFieldValue=""
+            >
+              
+            </TextFieldBox>
+            <InputFieldBox
+              inputFieldClass="incidentForm__input"
+              inputFieldId="image-urls"
+              inputFieldName="imageUrls"
+              inputFieldOnchange={[Function]}
+              inputFieldPlaceholder="image-urls separated by commas"
+              inputFieldType="text"
+              inputFieldValue=""
+            >
+              
+            </InputFieldBox>
+            <InputFieldBox
+              inputFieldClass="incidentForm__input"
+              inputFieldId="video-urls"
+              inputFieldName="videoUrls"
+              inputFieldOnchange={[Function]}
+              inputFieldPlaceholder="video-urls separated by commas"
+              inputFieldType="text"
+              inputFieldValue=""
+            >
+              
+            </InputFieldBox>
+            <InputFieldBox
+              inputFieldClass="incidentForm__input"
+              inputFieldId="coordinates"
+              inputFieldName="coordinates"
+              inputFieldOnchange={[Function]}
+              inputFieldPlaceholder="coordinates e.g 0.38272, 31.73373"
+              inputFieldType="text"
+              inputFieldValue=""
+            >
+              
+            </InputFieldBox>
+            <span
+              className="incidentForm__error"
+            >
+              
+            </span>
+            <span
+              className="incidentForm__Message"
+            >
+              
+            </span>
+            <Button
+              buttonClass="signupForm__button"
+              buttonEvent={[Function]}
+              buttonId="signupForm__button"
+              buttonName="Add incident"
+            />
+          </form>
+        </div>
+      </div>,
+      "_rendering": false,
+      "_updater": [Circular],
+      "_workInProgressHook": null,
+    },
+  },
+}
+`;

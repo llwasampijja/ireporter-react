@@ -1,27 +1,47 @@
+// third-party libraries
 import axios from 'axios';
-import { CREATE_REDFLAG_SUCCESS, GET_REDFLAGS_SUCCESS } from '../actionTypes/incidentTypes';
+
+// action types
+import {
+  CREATE_REDFLAG_SUCCESS,
+  GET_REDFLAGS_SUCCESS,
+  CREATE_REDFLAG_FAILED,
+  GET_REDFLAGS_FAILED,
+} from '../actionTypes/incidentTypes';
 import { IS_LOADING } from '../actionTypes';
+
+// utilities
+import isAuthenticated from '../../../utilities';
 import { baseUrl } from '../../../utilities/myConstants';
 
 const startLoading = () => ({
   type: IS_LOADING,
 });
 
-const createRedflagSuccess = () => ({
+const createRedflagSuccess = respo => ({
   type: CREATE_REDFLAG_SUCCESS,
+  payload: respo.data.message,
 });
 
-const getRedflagSuccess = respo => ({
+const createRedflagFailed = error => ({
+  type: CREATE_REDFLAG_FAILED,
+  payload: error.response.data.error,
+});
+
+const getRedflagSuccess = (respo, userNameInToken) => ({
   type: GET_REDFLAGS_SUCCESS,
   payload: respo.data.data,
+  username: userNameInToken,
 });
 
-const token = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkZW50aXR5Ijp7InVzZXJfaWQiOjU4LCJ1c2VybmFtZSI6ImRhbGwiLCJpc19hZG1pbiI6ZmFsc2V9LCJleHAiOjE1NjE3MjExOTV9.rkzimPCUjZv45EvZATDJrTNwcQrWYPm7FPlyB4FkI3g';
+const getRedflagFailed = () => ({
+  type: GET_REDFLAGS_FAILED,
+});
 
+const { token } = isAuthenticated();
 export const createRedflagAction = redflagObject => (dispatch) => {
   dispatch(startLoading());
-  // console.log(redflagObject);
-  axios({
+  return axios({
     url: `${baseUrl}/red-flags`,
     method: 'post',
     data: redflagObject,
@@ -30,17 +50,15 @@ export const createRedflagAction = redflagObject => (dispatch) => {
       Authorization: `Bearer ${token}`,
     },
   }).then((resp) => {
-    dispatch(createRedflagSuccess());
-    console.log(resp.data);
+    dispatch(createRedflagSuccess(resp));
   }).catch((error) => {
-    console.log(error.response);
+    dispatch(createRedflagFailed(error));
   });
 };
 
 export const getRedflagsAction = () => (dispatch) => {
   dispatch(startLoading());
-  // console.log('called');
-  axios({
+  return axios({
     url: `${baseUrl}/red-flags`,
     method: 'get',
     headers: {
@@ -48,9 +66,9 @@ export const getRedflagsAction = () => (dispatch) => {
       Authorization: `Bearer ${token}`,
     },
   }).then((resp) => {
-    // console.log(resp.data);
-    dispatch(getRedflagSuccess(resp));
-  }).catch((error) => {
-    console.log(error.response);
+    const { username } = isAuthenticated();
+    dispatch(getRedflagSuccess(resp, username));
+  }).catch(() => {
+    dispatch(getRedflagFailed());
   });
 };

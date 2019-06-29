@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`tests for the Navbar component Navbar renders properly 1`] = `
+<header
+  className="navigation"
+>
+  <h1>
+    <a
+      href="index.html"
+    >
+      IReporter
+    </a>
+  </h1>
+  <nav
+    className="bigscreen-menu-nav"
+    id="bigscreen-menu-nav-signedin"
+  >
+    <ul>
+      <li
+        className="header-nav-item"
+      >
+        <a
+          href=""
+        />
+      </li>
+      <li
+        className="header-nav-item non-admin-link"
+      >
+        <a
+          href="/sign-up"
+        />
+      </li>
+    </ul>
+  </nav>
+</header>
+`;

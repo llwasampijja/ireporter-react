@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test for the LoaderProgress component should match the snapshot 1`] = `
+<div>
+  <div
+    className="progress_loader"
+  />
+</div>
+`;

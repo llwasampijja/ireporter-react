@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`tests for the GetRedflags component GetRedflags renders properly 1`] = `
+<div>
+  <Navbar
+    adminPanel="/incidents"
+    redflagsLink="Add a redflag"
+    userName=""
+  />
+  <section
+    className="section-manage-content"
+    id="view-user-redflags"
+  >
+    <div
+      className="section-hold-content"
+    >
+      <div>
+        <div>
+          No posts yet
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+`;
